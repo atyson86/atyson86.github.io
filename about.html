@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="brand">
+                    <div>ALEX TYSON</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="two-column-wrapper">
+                <div class="profile-image-wrapper">
+                    <img src="images/profile.jpg">
+                </div>
+                <div class="profile-content-wrapper">
+                    <h1>Thanks for visiting my site!</h1>
+                    <p>
+                        My name is Alex Tyson. I am currently a second semester Junior at Bowdoin College pursuing a 
+                        Computer Science and Education Coordinate Major. After College I intend to accept a commission
+                        as an officer in the United States Marine Corps. This summer I will be attending the PLC Seniors
+                        Course at OCS in Quantico, VA. This has been a long and rewarding journey for me and I am eager 
+                        to graduate and begin my service to this country. 
+                    </p>
+                    <h2>My Current Goals</h2>
+                    <p>* Graduate from OCS this Summer and earn my Eagle, Globe, and Anchor</p>
+                    <p>* Complete my final football season at Bowdoin College</p>
+                    <p>* Pursue a Cybersecurity Contract with the USMC</p>
+                    <p>* Graduate from Bowdoin College</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper')
+
+    portfolioItems.forEach(portfolioItem => {
+        portfolioItem.addEventListener('mouseover', () => {
+            portfolioItem.childNodes[1].classList.add('img-darken');
+        })
+        portfolioItem.addEventListener('mouseout', () => {
+            portfolioItem.childNodes[1].classList.remove('img-darken');
+        })
+    })
+</script>
+</html>
