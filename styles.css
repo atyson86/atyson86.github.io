@@ -126,3 +126,39 @@ body {
 .profile-content-wrapper h1 {
     color: black;
 }
+
+/* Fitness Page Sytles */
+
+.heading-wrapper h1{
+    display: flex;
+    justify-content: center;
+    padding: 38px;
+
+}
+
+.table {
+    width: 100%;
+}
+
+.table th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+.table.PFT tr:nth-child(even) {
+    background-color: #eee;
+}
+
+.table.PFT tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.table.PFT th {
+    background-color: black;
+    color: white;
+}
