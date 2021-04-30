@@ -101,6 +101,13 @@ body {
     filter: brightness(10%);
 }
 
+.directions-wrapper {
+    display: flex;
+}
+
+.general-data-wrapper h1 {
+    color: black
+}
 /* About Page Styles */
 
 .two-column-wrapper {
