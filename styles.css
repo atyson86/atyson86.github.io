@@ -167,3 +167,42 @@ body {
     background-color: black;
     color: white;
 }
+
+.MAX {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.MAX tr:nth-child(even) {
+    background-color: #eee;
+}
+
+.MAX tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.MAX th {
+    background-color: black;
+    color: white;
+}
+.fitness-goals-container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.fitness-goals-heading-wrapper {
+    color: black;
+    padding: 30px
+}
+
+.fitness-goals {
+    border: 1px solid black;
+    text-align: left;
+    padding: 38px;
+}
+
+.update {
+    border: 1px solid black;
+    text-align: left;
+    padding: 38px;
+}
