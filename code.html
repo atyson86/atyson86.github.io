@@ -1,3 +1,121 @@
-<div class="txt-wrapper">
-    <h1>More to come soon!</h1>
-</div>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="brand">
+                    <div>ALEX TYSON</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="bg-image">
+                <div class="bg-image-text">
+                    <h1>GitHub Info</h1>
+                    <p>Link to GitHub Account: <a href="https://github.com/atyson86" style="color:white">atyson86</a></p>
+                </div>
+            </div>
+            <div class="Projects-container">
+                <div class="projects-heading-wrapper">
+                    <h2>Projects from Computational Creativity</h2>
+                </div>
+                <div class="project">
+                    <h3>A Markov Distinction</h3>
+                    <p>
+                        How it Works: The program utilizes two different Markov Transition Matrices to probabilistically
+                        select colors and shapes to display on a window of your preferred size. The transition matrices 
+                        contain arbitrary probabilities that result in making colorful and unique pieces of art every time 
+                        the program is run. The list of shapes include: rectangles, circles, ovals, triangles, and hexagons.
+                        The list of colors include: Red, yellow, blue, green, cyan, pink, orange, purple, black, and white.
+                    </p>
+                    <p>
+                        Personal Meaning: This system is personally meaningful to me because it represents my current feelings
+                        upon entering this class. I know I have the basic skills I need to excel, but there is trepidation, fear,
+                        and confusion all melded together in my mind as I begin the journey through this course. The artwork that
+                        is created in this system is excellent at displaying these feelings because it is an abstract mess of
+                        confusing shapes and colors that are never permenant. You can run the program countless times and each
+                        time you will end up with a different result of mixed colors and shapes. The true beauty behind the system,
+                        however, is the unpredictability. Sometimes the artwork created is beautiful and makes sense the way the
+                        shapes and colors fit together. Other times, the artwork is bad and the shapes and colors do not seem to 
+                        fit together well. I think the unbeautiful pieces are just as important as the beautiful ones because they 
+                        represent mistakes that can be made along the way that still lend themselves to improved learning.
+                    </p>
+                </div>
+                <div class="project">
+                    <h3>Chauvin Trial Poet</h3>
+                    <p>This is a poetry generator that uses Tweets related to a specific query in order to create a text corpus. Below I will outline the general process:</p>
+
+                        <p>
+                            1) Use Twitter API to collect up to 100 tweets related to the Derek Chauvin Trial that is happening in MN.
+                            Then strip the text and store it in a .txt file entitled "sample_text.txt".
+                        </p>
+                        <p>
+                            2) Train a POS Tagger based on tagged sentences from the nltk.corpus.brown('news') corpus
+                        </p>
+                        <p>
+                            3) POS Tag all of the words in the generated sample_text.txt file.
+                        </p>
+                        <p>
+                            4) Select 2 short random lines from the nltk.corpus.gutenberg "whitman-leaves.txt" fileid. use the trained
+                            tagger to tag these words as well.
+                        </p>
+                        <p>
+                            5) Generate a POS dictionary that maps parts of speech to their corresponding words in the sample_text.txt file.
+                            Then Generate a CFD dictionary that maps each word to the occurence of subsequent words from the sample_text.txt
+                            file.
+                        </p>
+                        <p>
+                            6) Generate 50 poems and score them and continually update a "best" poem as it goes. poem generation method:
+                            i) take tags from the Whitman lines. ii) for each line from Whitman... for each whitman tag... grab a random 
+                            value from the pos dictionary with key = to whitman tag (random.choice(pos[whitman tag])) check to see if that
+                            word is in the cfd... if it is then assign it's max value (most likely next word) to a variable name "next_word"
+                            ii) append the random value to a list called "line_words" iv) keep looping until line is complete... each time
+                            checking to see if you can add "next_word" instead of a random value This will potentially make the poem more
+                            coherent v) join the list of words for each line... then join both lines together. Scoring methods: i) compare
+                            the syllables in each word in the generated poem to the syllables of the whitman poem lines. each poem starts 
+                            with a score of 100 (meaning the syllable count is exactly the same) and then any time there is a difference 
+                            of either more or fewer syllables it is subtracted from that score of 100. ii) Count the occurences of alliteration 
+                            in the poem. Any time there is an occurence of alliteration, +1 is added back to the overall score.
+                        </p>
+                        <p>
+                            7) The "best" poem, or the poem with the highest overall fitness is then saved in a .txt file.
+                        </p>
+                        <p>
+                            8) User has option to listen to the most recently generated best poem or to select a poem from the /poem folder.
+                        </p>
+
+                    <p>
+                        Personal Challenge: This assignment really made me get out of my comfort zone. Prior to working on this task I 
+                        had extremely limited experience using API's and python libraries. By really diving into this project I learned 
+                        how to use many different API's and libraries such as Twitter, nltk, and pronouncing. The toolsets that these 
+                        provided really helped me to excel and create something that in my opinion has some actual artistic value. I 
+                        spent a lot of time investigating the different tools I could utilize in these packages and just doing research 
+                        in general. I feel as though this was really my first time integrating intensive research into my coding practices. 
+                        Furthermore, I learned a lot about natural language processing and the many interesting things you can do with it. 
+                        This is definitely a project I would love to revisit and continue to explore.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
