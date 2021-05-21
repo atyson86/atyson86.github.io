@@ -42,7 +42,7 @@ class Particle {
 
     this.acceleration = createVector(0, random(0, 0.2));
     this.velocity = vel.mult(random(5));
-    this.lifespan = random(10, 50);
+    this.lifespan = random(25, 75);
     this.color = color(random(r), random(g), random(b));
     this.weightRange = random(3, 50);
     this.loc = createVector(x, y);
