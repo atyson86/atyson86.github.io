@@ -3,14 +3,24 @@
 
 let particles = [];
 
+let sliderR;
+let sliderG;
+let sliderB;
+
 function setup() {
     var canvas = createCanvas(1550, 600);
     background(255);
     canvas.parent('canvasForHTML');
+    sliderR = createSlider(0, 255, 127);
+    sliderG = createSlider(0, 255, 127);
+    sliderB = createSlider(0, 255, 127);
   }
 
 function mouseDragged() {
-    particles.push(new Particle(mouseX, mouseY));
+  let r = sliderR.value();
+  let g = sliderG.value();
+  let b = sliderB.value();
+    particles.push(new Particle(mouseX, mouseY, r, g, b));
   }
   
 function draw() {
@@ -19,22 +29,21 @@ function draw() {
       if (p.isDead()) {
        particles.splice(0,1);
       } else {
-        p.update();
-        p.display();
+        p.run();
       }
     }
   }
 
 class Particle {
-  constructor(x, y) {
+  constructor(x, y, r, g, b) {
     // location = createVector(x, y);
     var randDegrees = random(360);
     var vel = createVector(cos(radians(randDegrees), sin(radians(randDegrees))));
 
-    this.acceleration = createVector(0, random(0.1));
+    this.acceleration = createVector(0, random(0, 0.2));
     this.velocity = vel.mult(random(5));
-    this.lifespan = random(50, 70);
-    this.color = color(random(255), random(255), random(255));
+    this.lifespan = random(10, 50);
+    this.color = color(random(r), random(g), random(b));
     this.weightRange = random(3, 50);
     this.loc = createVector(x, y);
     this.x = x;
@@ -47,9 +56,11 @@ class Particle {
   // Method to update position
   update() {
     var noiseScale = 0.2;
-    var noiseValue = (noise((this.loc.x) * noiseScale, (this.loc.y) * noiseScale) * (2 * PI) * 4);
+    var noiseValue = (noise((this.loc.x) * noiseScale, (this.loc.y) * noiseScale) * 24);
 
     var dir = createVector(cos(noiseValue), sin(noiseValue));
+
+    this.color;
 
     this.velocity.add(dir);
     this.loc.add(this.velocity);
@@ -57,13 +68,17 @@ class Particle {
   }
   // Method to display
   display() {
+    var rectSize = random(15);
+    translate (width, height);
+    rotate(PI);
     strokeWeight(this.lifespan + 1.5);
     stroke(0, (this.lifespan * 120));
-    point(this.loc.x, this.loc.y);
+    ellipse(this.loc.x, this.loc.y, rectSize, rectSize);
+
 
     strokeWeight(this.lifespan);
     stroke(this.color);
-    point(this.loc.x, this.loc.y);
+    ellipse(this.loc.x, this.loc.y, rectSize, rectSize);
   }
   // Is the particle still useful?
   isDead() {
