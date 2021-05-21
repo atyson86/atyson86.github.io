@@ -109,8 +109,18 @@ body {
 .general-data-wrapper h1 {
     color: black
 }
-/* About Page Styles */
 
+.more-content {
+    padding: 10px;
+}
+
+.general-data-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* About Page Styles */
 .two-column-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -129,7 +139,6 @@ body {
 }
 
 /* Fitness Page Sytles */
-
 .heading-wrapper h1{
     display: flex;
     justify-content: center;
