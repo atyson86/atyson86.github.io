@@ -2,10 +2,10 @@
 // https://p5js.org/examples/simulate-particle-system.html
 
 let particles = [];
-
 let sliderR;
 let sliderG;
 let sliderB;
+let sizeSlide;
 
 function setup() {
     var canvas = createCanvas(1550, 600);
@@ -14,13 +14,15 @@ function setup() {
     sliderR = createSlider(0, 255, 127);
     sliderG = createSlider(0, 255, 127);
     sliderB = createSlider(0, 255, 127);
+    sizeSlide = createSlider(0, 100, 50);
   }
 
 function mouseDragged() {
   let r = sliderR.value();
   let g = sliderG.value();
   let b = sliderB.value();
-    particles.push(new Particle(mouseX, mouseY, r, g, b));
+  let life = sizeSlide.value();
+    particles.push(new Particle(mouseX, mouseY, r, g, b, life));
   }
   
 function draw() {
@@ -35,14 +37,14 @@ function draw() {
   }
 
 class Particle {
-  constructor(x, y, r, g, b) {
+  constructor(x, y, r, g, b, life) {
     // location = createVector(x, y);
     var randDegrees = random(360);
     var vel = createVector(cos(radians(randDegrees), sin(radians(randDegrees))));
 
     this.acceleration = createVector(0, random(0, 0.2));
     this.velocity = vel.mult(random(5));
-    this.lifespan = random(25, 75);
+    this.lifespan = random(life);
     this.color = color(random(r), random(g), random(b));
     this.weightRange = random(3, 50);
     this.loc = createVector(x, y);
