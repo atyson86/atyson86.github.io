@@ -1,5 +1,7 @@
-// https://openprocessing.org/sketch/143842
-// https://p5js.org/examples/simulate-particle-system.html
+/**
+ * Resources Used for inspiration:  https://openprocessing.org/sketch/143842
+ * https://p5js.org/examples/simulate-particle-system.html
+ */
 
 
 /**
