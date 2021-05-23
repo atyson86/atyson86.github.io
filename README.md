@@ -17,7 +17,7 @@ This project was a personal challenge that has been taking place over the past f
 
 # Sources of Inspiration:
 p5.js Particle System: https://p5js.org/examples/simulate-particle-system.html
-- This was my initial inspiration when looking for something to create. It was pretty similar to the bubbles that we created in class, but I felt that it had a little bit more complexity with the whole velocity and acceleration component. This took some playing around with to figure out.
+- This was my initial inspiration when looking for something to create. It was pretty similar to the bubbles that we created in class, but I felt that it had a little bit more complexity with the whole velocity and lifespan component. This took some playing around with to figure out.
 
 Raven Kwok "Noise Turbulence Doodles": https://openprocessing.org/sketch/143842
 - This was my second source of inspiration. I was browsing through Openprocessing.org and this project caught my eye! It was so satisfying to doodle with and I knew I wanted to do something similar because it involved the use of the "particle system" that I found on p5.js. However, I found that most of what they were doing very complex and unnecessary for what I was trying to achieve. While it was visually appealing, it did not provide very much control to the user. I wanted something that was more focused on interactivity and control. This is why I implemented things such as the slider bars in my project so that the user could control things like color and size of the particles. 

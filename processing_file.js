@@ -62,7 +62,7 @@ function draw() {
 
 /**
  * The particle class is used to create a single particle with an acceleration, velocity,
- * lifespan, and color
+ * lifespan, and color. Much of this construction comes from the p5.js particle system
  */
 class Particle {
 
@@ -79,11 +79,9 @@ class Particle {
     var randDegrees = random(360);
     var vel = createVector(cos(radians(randDegrees), sin(radians(randDegrees))));
 
-    this.acceleration = createVector(0, random(0, 0.2));
     this.velocity = vel.mult(random(5)); //multiply the velocity vector by a ranom number between 1 and 5
     this.lifespan = life;
     this.color = color(random(r), random(g), random(b));
-    this.weightRange = random(3, 50);
     this.location = createVector(x, y);
     this.x = x;
     this.y = y;
@@ -95,20 +93,17 @@ class Particle {
 
   /**
    * Updates a particle's velocity, loction, color, and lifespan
+   * inspired by the "Noise Turbulence Doodles" but much less complex
    */
   update() {
-
-    //noise is a random sequence generator producing a more naturally ordered,
-    //harmonic succession of numbers compared to the standard random() function
-    var noiseScale = 0.2;
-    //24 is arbitrary, I just liked the result
-    var noiseValue = (noise((this.location.x) * noiseScale, (this.location.y) * noiseScale) * 24);
+    var randomXValue = random(this.location.x);
+    var randomYValue = random(this.location.y);
   
-    var dir = createVector(cos(noiseValue), sin(noiseValue));
+    var direction = createVector(cos(randomXValue), sin(randomYValue));
 
     this.color;
 
-    this.velocity.add(dir);
+    this.velocity.add(direction);
     this.location.add(this.velocity);
     this.lifespan -= 2;
   }
